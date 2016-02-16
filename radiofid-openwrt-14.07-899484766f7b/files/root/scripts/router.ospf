@@ -1,0 +1,14 @@
+!
+router ospf
+ ospf router-id II 
+ redistribute connected route-map TO-OSPF
+ network NN area AA 
+ network II/32 area AA
+ area AA nssa 
+
+ip prefix-list ospf-new seq 10 permit II/32
+ip prefix-list ospf-new seq 20 deny any
+!
+route-map TO-OSPF permit 10
+ match ip address prefix-list ospf-new
+!

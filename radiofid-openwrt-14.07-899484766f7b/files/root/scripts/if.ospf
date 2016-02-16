@@ -1,0 +1,8 @@
+!
+interface eth-SIM
+ ip ospf network point-to-point
+ ip ospf cost CC 
+ ip ospf hello-interval II
+ ip ospf dead-interval DD
+ ip ospf transmit-delay TT
+!
